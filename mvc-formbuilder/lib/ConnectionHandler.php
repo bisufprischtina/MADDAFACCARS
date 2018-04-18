@@ -34,7 +34,7 @@ class ConnectionHandler
     }
 
     /**
-     * Prüft ob bereits eine Verbindung auf die Datenbank existiert,
+     * Prüft ob bereits eine Verbindung auf die Datenbank existiert, f
      * initialisiert diese ansonsten und gibt sie dann zurück.
      *
      * @throws Exception wenn der Verbindungsaufbau schiefgegeangen ist.
