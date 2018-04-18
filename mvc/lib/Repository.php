@@ -80,7 +80,7 @@ class Repository
      * gibt es diese Variabel. Diese muss in den konkreten Implementationen mit
      * dem Tabellennamen überschrieben werden. (Siehe beispiel oben).
      */
-    protected $tableName = null;
+    protected $tableName = benutzer;
 
     /**
      * Diese Funktion gibt den Datensatz mit der gegebenen id zurück.
