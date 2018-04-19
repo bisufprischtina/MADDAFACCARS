@@ -2,7 +2,7 @@
 
 <?php
 
-$form = new Form('/user/doReview');
+$form = new Form('/review/doReview');
 
 echo $form->text()->label('Marke')->name('marke');
 echo $form->text()->label('Modell')->name('modell');

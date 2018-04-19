@@ -59,7 +59,7 @@ class UserController
     public function dologin()
     {
         if (isset($_POST['submit'])) {
-            $username = $_POST['name'];
+            $username = $_POST['username'];
             $password = $_POST['password'];
             mysql_connect("localhost", "root", "");
             mysql_select_db("maddafaccars");
@@ -72,10 +72,12 @@ class UserController
                 if ($user == $username && $pass == $password) {
                     echo "Welcome $username ";
                 } else {
-                    echo "Wrong USername or password";
+                    echo "Wrong Username or password";
                 }
 
             }
+        }else{
+          echo "neger si schwarz";
         }
 
     }

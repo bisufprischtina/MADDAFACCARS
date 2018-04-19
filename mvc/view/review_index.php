@@ -6,9 +6,9 @@
     <?php else: ?>
         <?php foreach ($reviews as $review): ?>
             <div class="panel panel-default">
-                <div class="panel-heading"><?= $review->benutzername ?></div>
+                <div class="panel-heading"><?= $review->marke ?> <?= $review->modell; ?></div>
                 <div class="panel-body">
-                    <p style="color:black;" class="description">Review zum <?= $review->marke ?><a href="mailto:<?= $review->modell; ?>"><?= $review->modell; ?></a></p>
+                    <p style="color:black;" class="description">Review zum <?= $review->marke ?> <?= $review->modell; ?> <?= $review->review; ?> <?= $review->image; ?></a></p>
                     <p>
                         <a title="Löschen" href="/user/delete?id=<?= $review->id ?>">Löschen</a>
                     </p>
