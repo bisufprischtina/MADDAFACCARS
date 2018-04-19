@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title><?= $title ?> | MADDAFACCARS</title>
+    <link href="hat.ico" rel="icon">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
     <link href="/css/style.css" rel="stylesheet">
-    <link href="../rice.ico" rel="shortcut icon">
+
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -22,7 +24,7 @@
   </head>
   <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
+      <div class="navbarstuff">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -30,16 +32,40 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">Bbc MVC</a>
+          <a class="navbar-brand" href="/user_login">Bbc MVC</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
             <li><a href="/user">Benutzer</a></li>
             <li><a href="/user/create">Benutzer erstellen</a></li>
+            <li><a href="/user/login">Login</a>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
+        
+    <!--<label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="passwort" required>
+
+    <button type="submit">Login</button>
+  -->
+   <!-- <form action = "" method = "post"> 
+      <div class="sepp">
+                  <label>Username  :</label><input type = "text" name = "username" class = "box"/>
+                  <label>Password  :</label><input  type = "password" name = "password" class = "box" />
+                  <input  type = "submit" value = " Submit "/>
+                </div>
+              </form> -->
+
+
+
+
+
+
+
     </nav>
 
     <div class="container">

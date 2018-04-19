@@ -32,3 +32,43 @@ a:hover {
   text-decoration: none;
   color: #313131!important;
 }
+
+.sepp {
+  float: right;
+  height: 50px;
+  padding-top:15px;
+  margin-right: 20px;
+
+}
+.navbarstuff {
+  margin-right: 0px;
+  width: 500px;
+  float: left;
+}
+input {
+  color: black;
+}
+
+button {
+color: black;
+}
+
+#user-create {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+#user-create .component {
+  min-width: 500px;
+}
+
+
+#user-create div.col-md-4 {
+  float: none;
+  width: 100%;
+}
+
+#user-create .btn {
+  float: right;
+}
