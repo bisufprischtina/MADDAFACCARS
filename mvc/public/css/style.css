@@ -33,6 +33,7 @@ a:hover {
   color: #313131!important;
 }
 
+
 .sepp {
   float: right;
   height: 50px;
@@ -40,11 +41,7 @@ a:hover {
   margin-right: 20px;
 
 }
-.navbarstuff {
-  margin-right: 0px;
-  width: 500px;
-  float: left;
-}
+
 input {
   color: black;
 }
@@ -71,4 +68,45 @@ color: black;
 
 #user-create .btn {
   float: right;
+}
+.image {
+  text-align: center;
+}
+
+.heading {
+  text-align: center;
+}
+
+.hometext {
+  text-align: center;
+}
+
+.centerform {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.hidethisshit{
+  padding:5px 10px;
+  background:#337ab7;
+  border:1px solid #2e6da4;
+  position:relative;
+  color:#fff;
+  border-radius:2px;
+  text-align:center;
+  cursor:pointer;
+  margin-bottom: 10px;
+}
+.hide_file {
+  position: absolute;
+  z-index: 1000;
+  opacity: 0;
+  cursor: pointer;
+  right: 0;
+  top: 0;
+  height: 100%;
+  font-size: 24px;
+  width: 100%;
+  margin-bottom-bottom: 10px;
+
 }

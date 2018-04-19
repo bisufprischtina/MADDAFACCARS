@@ -56,44 +56,68 @@ class UserController
     }
 
 
+    public function dologin()
+    {
+       if (isset($_POST['submit'])) 
+       {
+           $username=$_POST['name'];
+           $password=$_POST['password'];
+           mysql_connect("localhost","root","");
+           mysql_select_db("maddafaccars");
+           $result=mysql_query("select * from benutzer");
+           while($row=mysql_fetch_array($result)) {
 
-public function dologin()
-{
-   if (isset($_POST['submit'])) 
-   {
-       $username=$_POST['name'];
-       $password=$_POST['password'];
-       mysql_connect("localhost","root","");
-       mysql_select_db("maddafaccars");
-       $result=mysql_query("select * from benutzer");
-       while($row=mysql_fetch_array($result)) {
+               $users=$row['benutzername'];
+               $pass=$row['passwort'];
 
-           $users=$row['benutzername'];
-           $pass=$row['passwort'];
+               if ($user==$username && $pass==$password) 
+               {
+                   echo "Welcome $username ";
+               }
+               else{
+                echo "Wrong USername or password";
+               }
 
-           if ($user==$username && $pass==$password) 
-           {
-               echo "Welcome $username ";
            }
-           else{
-            echo "Wrong USername or password";
-           }
-
        }
-   }
 
-}
+    }
 
-public function login()
-{
+    public function login()
+    {
 
-    $view = new View('user_login');
-    $view->title = 'Login';
-    $view->heading = 'Login';
-    $view->display();
-}
+        $view = new View('user_login');
+        $view->title = 'Login';
+        $view->heading = 'Login';
+        $view->display();
+    }
 
-}
+    public function review()
+    {
+        $view = new View('review_create');
+        $view->title = 'Review erstellen';
+        $view->heading = 'Review erstellen';
+        $view->display();
+    }
+
+    public function doReview()
+    {
+        if ($_POST['sendreview']) {
+            $username = $_POST['username'];
+            $email = $_POST['email'];
+            $passwort = $_POST['password'];
+
+            // $password  = $_POST['password'];
+            $password = 'no_password';
+
+            $userRepository = new UserRepository();
+            $userRepository->create($username, $email, $password);
+        }
+
+        // Anfrage an die URI /user weiterleiten (HTTP 302)
+        header('Location: /user');
+
+    }
 
 
 ?>

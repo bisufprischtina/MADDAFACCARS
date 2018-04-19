@@ -5,3 +5,4 @@ require_once 'Builder.php';
 require_once 'TextBuilder.php';
 require_once 'PasswordBuilder.php';
 require_once 'SubmitBuilder.php';
+require_once 'ImageBuilder.php';
