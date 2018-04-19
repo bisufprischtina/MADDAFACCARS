@@ -37,9 +37,10 @@
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
             <li><a href="/user">Benutzer</a></li>
+            <li><a href="/review">Reviews</a></li>
             <li><a href="/user/create">Benutzer erstellen</a></li>
+            <li><a href="/review/review">Review erstellen</a></li>
             <li><a href="/user/login">Login</a>
-            <li><a href="/user/review">Review erstellen</a></li>
           </ul>
         </div><!--/.nav-collapse -->
 
