@@ -32,7 +32,6 @@ class UserRepository extends Repository
     {
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
         $query = "INSERT INTO $this->tableName (benutzername, email, passwort) VALUES (?, ?, ?)";
-        echo $username;
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('sss', $username, $email, $passwordHash);
