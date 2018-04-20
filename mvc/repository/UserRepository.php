@@ -30,17 +30,41 @@ class UserRepository extends Repository
      */
     public function create($username, $email, $password)
     {
-        $password = sha1($password);
+        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
         $query = "INSERT INTO $this->tableName (benutzername, email, passwort) VALUES (?, ?, ?)";
         echo $username;
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('sss', $username, $email, $password);
+        $statement->bind_param('sss', $username, $email, $passwordHash);
 
         if (!$statement->execute()) {
             throw new Exception($statement->error);
         }
 
         return $statement->insert_id;
+    }
+
+
+    public function login($username, $password){
+
+        $query = "SELECT * FROM benutzer WHERE benutzername = ?";
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement-> bind_param('s' , $username);
+
+        if(!$statement->execute())
+        {
+            throw new Exception($statement->error);
+        }
+
+        $result = $statement->get_result();
+
+        $user = $result->fetch_object();
+
+        if (password_verify($password, $user->passwort)) {
+             $_SESSION['id']=$user->id; 
+             return true;
+        }
+        return false;
+
     }
 }

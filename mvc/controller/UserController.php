@@ -36,7 +36,7 @@ class UserController
             $passwort = $_POST['password'];
 
             // $password  = $_POST['password'];
-            $password = 'no_password';
+            // $password = 'no_password';
 
             $userRepository = new UserRepository();
             $userRepository->create($username, $email, $password);
@@ -61,21 +61,21 @@ class UserController
         if (isset($_POST['submit'])) {
             $username = $_POST['username'];
             $password = $_POST['password'];
-            mysql_connect("localhost", "root", "");
-            mysql_select_db("maddafaccars");
-            $result = mysql_query("select * from benutzer");
-            while ($row = mysql_fetch_array($result)) {
+            
+            $userRepository = new UserRepository();
+            $loginErfolgreich = $userRepository->login($username, $password);
 
-                $users = $row['benutzername'];
-                $pass = $row['passwort'];
+            if($loginErfolgreich) {
 
-                if ($user == $username && $pass == $password) {
-                    echo "Welcome $username ";
-                } else {
-                    echo "Wrong Username or password";
-                }
-
+              header('Location: /');
             }
+            else
+            {
+              header('Location: /user/login');
+            }
+
+
+
         }else{
           echo "neger si schwarz";
         }
