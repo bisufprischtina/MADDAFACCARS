@@ -20,8 +20,8 @@ class ReviewController
     }
     public function delete()
     {
-        $userRepository = new ReviewRepository();
-        $userRepository->deleteById($_GET['id']);
+        $reviewRepository = new ReviewRepository();
+        $reviewRepository->deleteById($_GET['id']);
 
         // Anfrage an die URI /user weiterleiten (HTTP 302)
         header('Location: /review');
