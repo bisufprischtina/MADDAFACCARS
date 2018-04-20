@@ -14,7 +14,7 @@
                         <?php
                         if($_SESSION['username'] == 'admin')
                         {
-                            echo  '      <a title="Löschen" href="/review/delete?id=<?= $review->id ?>">Delete</a>';
+                            echo  '      <a title="Löschen" href="/review/delete?id='.$review->id.'">Delete</a>';
                         }
                         ?>
                     </p>
