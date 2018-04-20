@@ -21,7 +21,7 @@ class ReviewRepository extends Repository
     {
         
         $query = "INSERT INTO $this->tableName (marke, modell, review, image) VALUES (?, ?, ?, ?)";
-        echo $marke;
+        $image = '/' . $image;
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('ssss', $marke, $modell, $review,$image);
@@ -32,5 +32,22 @@ class ReviewRepository extends Repository
 
         return $statement->insert_id;
     }
+
+    /**
+     * @param $image
+     * @return string
+     */
+    public function imgToFolder($image)
+    {
+     $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
+     $timestamp = time();
+     $file_destination = "/images" . $timestamp . '.' . $ext;
+
+     if (move_uploaded_file($image['tmp_name'], $file_destination)){
+         echo $file_destination;
+     }
+     return $file_destination;
+    }
+
 }
 ?>

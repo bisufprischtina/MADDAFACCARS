@@ -166,8 +166,10 @@ class Repository
         $statement = ConnectionHandler::getConnection()->prepare($query);
         $statement->bind_param('i', $id);
 
+
         if (!$statement->execute()) {
             throw new Exception($statement->error);
         }
+
     }
 }

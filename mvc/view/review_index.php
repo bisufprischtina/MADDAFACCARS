@@ -8,13 +8,13 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><?= $review->marke ?> <?= $review->modell; ?></div>
                 <div class="panel-body">
-                    <img src="<?php echo $review->image ?>"><?= $review->image; ?>
+                    <img class="bild" src="<?php echo $review->image ?>"><?= $review->image; ?>
                     <p style="color:black;" class="description"> <br><?= $review->review; ?></p>
                     <p>
                         <?php
                         if($_SESSION['username'] == 'admin')
                         {
-                            echo  '      <a title="Löschen" href="/review/delete?id=<?= $review->id ?>">Delete</a>';
+                            echo  '      <a title="Löschen" href="/review/delete?id='.$review->id.'">Delete</a>';
                         }
                         ?>
                     </p>

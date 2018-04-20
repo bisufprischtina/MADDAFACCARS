@@ -18,6 +18,7 @@ class ReviewController
         $view->reviews = $reviewRepository->readAll();
         $view->display();
     }
+
     public function delete()
     {
         $reviewRepository = new ReviewRepository();
@@ -26,6 +27,7 @@ class ReviewController
         // Anfrage an die URI /user weiterleiten (HTTP 302)
         header('Location: /review');
     }
+
     public function review()
     {
         $view = new View('review_create');
@@ -40,12 +42,12 @@ class ReviewController
             $marke = $_POST['marke'];
             $modell = $_POST['modell'];
             $review = $_POST['review'];
-            $image = '/images/'.time().'_'.$_FILES['image']['name'];
-            $_FILES['image']['tmp_name'];
-            var_dump(move_uploaded_file($_FILES['tmp_name'], $image));die;
+            $image = 'images/' . time() . '_' . $_FILES['image']['name'];
 
+            move_uploaded_file($_FILES['image']['tmp_name'], $image);
             $reviewRepository = new ReviewRepository();
             $reviewRepository->create($marke, $modell, $review, $image);
+            $reviewRepository->imgToFolder($image);
         }
 
         // Anfrage an die URI /user weiterleiten (HTTP 302)
@@ -84,15 +86,16 @@ class ReviewController
                 //Display Image
                 echo "<img src=uploaded/" . $_FILES["file"]["name"] . ">";
 
+                var_dump($_FILES);die;
                 //Uploaded image folder
-                if (file_exists("uploaded/" . $_FILES["file"]["name"]))
+                if (file_exists("images/" . $_FILES["file"]["name"]))
                 {
                     echo $_FILES["file"]["name"] . " already exists. ";
                 }
                 else
                 {
                     move_uploaded_file($_FILES["file"]["tmp_name"],
-                        "uploaded/" . $_FILES["file"]["name"]);
+                        "images/" . $_FILES["file"]["name"]);
 
                 }
             }
