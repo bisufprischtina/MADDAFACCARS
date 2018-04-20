@@ -22,3 +22,4 @@ class ImageBuilder extends Builder
         return $result;
     }
 }
+
