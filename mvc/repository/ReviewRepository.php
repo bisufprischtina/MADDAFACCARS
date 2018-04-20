@@ -17,7 +17,7 @@ class ReviewRepository extends Repository
     protected $tableName = 'review';
 
 
- public function createcar($marke, $modell, $review, $image)
+ public function create($marke, $modell, $review, $image)
     {
         
         $query = "INSERT INTO $this->tableName (marke, modell, review, image) VALUES (?, ?, ?, ?)";

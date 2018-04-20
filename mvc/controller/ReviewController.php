@@ -18,7 +18,14 @@ class ReviewController
         $view->reviews = $reviewRepository->readAll();
         $view->display();
     }
+    public function delete()
+    {
+        $userRepository = new ReviewRepository();
+        $userRepository->deleteById($_GET['id']);
 
+        // Anfrage an die URI /user weiterleiten (HTTP 302)
+        header('Location: /review');
+    }
     public function review()
     {
         $view = new View('review_create');
@@ -33,11 +40,9 @@ class ReviewController
             $marke = $_POST['marke'];
             $modell = $_POST['modell'];
             $review = $_POST['review'];
-            $image = $_FILES['image'];
-            echo "<pre>";
-            var_dump($_FILES);
-            $_FILES['image']
-//            move_uploaded_file(filToUpload)
+            $image = '/images/'.time().'_'.$_FILES['image']['name'];
+            $_FILES['image']['tmp_name'];
+            var_dump(move_uploaded_file($_FILES['tmp_name'], $image));die;
 
             $reviewRepository = new ReviewRepository();
             $reviewRepository->create($marke, $modell, $review, $image);
