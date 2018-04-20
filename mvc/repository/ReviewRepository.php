@@ -17,14 +17,14 @@ class ReviewRepository extends Repository
     protected $tableName = 'review';
 
 
- public function createcar($marke, $modell, $review)
+ public function create($marke, $modell, $review, $image)
     {
         
-        $query = "INSERT INTO $this->tableName (marke, modell, review) VALUES (?, ?, ?)";
+        $query = "INSERT INTO $this->tableName (marke, modell, review, image) VALUES (?, ?, ?, ?)";
         echo $marke;
 
         $statement = ConnectionHandler::getConnection()->prepare($query);
-        $statement->bind_param('sss', $marke, $modell, $review);
+        $statement->bind_param('ssss', $marke, $modell, $review,$image);
 
         if (!$statement->execute()) {
             throw new Exception($statement->error);

@@ -77,7 +77,7 @@ class UserController
 
 
         }else{
-          echo "neger si schwarz";
+          echo "Hopp Thun";
         }
 
     }

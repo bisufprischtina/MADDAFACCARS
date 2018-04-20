@@ -8,9 +8,10 @@
             <div class="panel panel-default">
                 <div class="panel-heading"><?= $review->marke ?> <?= $review->modell; ?></div>
                 <div class="panel-body">
-                    <p style="color:black;" class="description"><?= $review->image; ?> <br><?= $review->review; ?></a></p>
+                    <img src="<?php echo $review->image ?>"><?= $review->image; ?>
+                    <p style="color:black;" class="description"> <br><?= $review->review; ?></p>
                     <p>
-                        <a title="Löschen" href="/user/delete?id=<?= $review->id ?>">Delete</a>
+                        <a title="Löschen" href="/review/delete?id=<?= $review->id ?>">Delete</a>
                     </p>
                 </div>
             </div>
