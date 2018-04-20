@@ -10,6 +10,7 @@ class UserController
 {
     public function index()
     {
+        Security::checkLogin();
         $userRepository = new UserRepository();
 
         $view = new View('user_index');
@@ -45,6 +46,7 @@ class UserController
 
     public function delete()
     {
+        Security::checkLogin();
         $userRepository = new UserRepository();
         $userRepository->deleteById($_GET['id']);
 
@@ -63,8 +65,9 @@ class UserController
             $loginErfolgreich = $userRepository->login($username, $password);
 
             if($loginErfolgreich) {
+                $_SESSION['username'] = $username;
+                header('Location: /');
 
-              header('Location: /');
             }
             else
             {
@@ -86,6 +89,13 @@ class UserController
         $view->title = 'Login';
         $view->heading = 'Login';
         $view->display();
+    }
+
+    public function doLogout()
+    {
+        session_destroy();
+        session_unset();
+        header('Location: /');
     }
 
 }

@@ -41,6 +41,7 @@
             <li><a href="/user/create">Create user</a></li>
             <li><a href="/review/review">Create review</a></li>
             <li><a href="/user/login">Login</a>
+            <li><a href="/user/doLogout">Logout</a>
           </ul>
         </div><!--/.nav-collapse -->
 
