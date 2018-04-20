@@ -23,26 +23,45 @@ class UserController
 
     public function create()
     {
+        $error = [];
         $view = new View('user_create');
         $view->title = 'Create user';
         $view->heading = 'Create user';
+        $view->errors = $error;
         $view->display();
     }
 
     public function doCreate()
     {
-
+        $error = [];
         if ($_POST['send']) {
             $username = $_POST['username'];
             $email = $_POST['email'];
             $password = $_POST['password'];
 
             $userRepository = new UserRepository();
-            $userRepository->create($username, $email, $password);
+            if($userRepository->checkName($username) < 1){
+                if($userRepository->checkMail($email) < 1){
+                    $userRepository->create($username, $email, $password);
+                    header("Location : /user/login");
+                }
+                else {
+                    $error["wrong"] = "Es existiert bereits ein Benutzer mit dieser Email-Adresse";
+                }
+            }else {
+                $error["wrong"] = "Es existiert bereits ein Benutzer mit diesem Benutzernamen";
+            }
+            $view = new View('user_create');
+            $view->title = 'Create user';
+            $view->heading = 'Create user';
+            $view->errors = $error;
+            $view->display();
+
+
         }
 
         // Anfrage an die URI /user weiterleiten (HTTP 302)
-        header('Location: /user');
+        header('Location: /user/doCreate');
     }
 
     public function delete()

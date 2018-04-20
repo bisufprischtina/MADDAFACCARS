@@ -66,4 +66,35 @@ class UserRepository extends Repository
         return false;
 
     }
+    public function checkName($username) {
+        $query = "SELECT * FROM benutzer WHERE benutzername = ?";
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement-> bind_param('s' , $username);
+
+        if(!$statement->execute())
+        {
+            throw new Exception($statement->error);
+        }
+
+        $result = $statement->get_result();
+
+        return $result->num_rows;
+
+    }
+
+    public function checkMail($email) {
+        $query = "SELECT * FROM benutzer WHERE email = ?";
+        $statement = ConnectionHandler::getConnection()->prepare($query);
+        $statement-> bind_param('s' , $email);
+
+        if(!$statement->execute())
+        {
+            throw new Exception($statement->error);
+        }
+
+        $result = $statement->get_result();
+
+        return $result->num_rows;
+
+    }
 }

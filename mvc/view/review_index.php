@@ -11,7 +11,12 @@
                     <img class="bild" src="<?php echo $review->image ?>"><?= $review->image; ?>
                     <p style="color:black;" class="description"> <br><?= $review->review; ?></p>
                     <p>
-                        <a title="Löschen" href="/review/delete?id=<?= $review->id ?>">Delete</a>
+                        <?php
+                        if($_SESSION['username'] == 'admin')
+                        {
+                            echo  '      <a title="Löschen" href="/review/delete?id=<?= $review->id ?>">Delete</a>';
+                        }
+                        ?>
                     </p>
                 </div>
             </div>

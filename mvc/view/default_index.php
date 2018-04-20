@@ -8,7 +8,7 @@
     <title><?= $title ?> | MADDAFACCARS</title>
 </head>
 <body>
-    <p class="hometext">Welcome to our car review page. On this Site you can upload a picture of your <br> car which you can then review. You can also give your or someone elses car a <br> rating from 1-5 stars.</p>
+    <p class="hometext">Welcome to our car-review page. On this Site you can upload a picture of your <br> car which you can then review. You can also look at someone elses car-review <br> which they have left on the site.</p>
     <br>
     <h1 class="hometext">Instructions:</h1>
     <p class="hometext">To write a review go to the create review tab. Then you will have to type in the <br> brand and model of your car and then also your review to the car. When you <br> are finished, press the submit review button to make your review public. <br></p>
