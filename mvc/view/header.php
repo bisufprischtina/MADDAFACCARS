@@ -36,13 +36,13 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
-            <li><a href="/user">Users</a></li>
             <li><a href="/review">Reviews</a></li>
-            <li><a href="/user/create">Create user</a></li>
+            <li><a href="/user">Users</a></li>
             <li><a href="/review/review">Create review</a></li>
               <?php
-              if(isset($_SESSION['username']))
+              if(!isset($_SESSION['username']))
               {
+                echo '<li><a href="/user/create">Create user</a></li>';
                 echo '<li><a href="/user/login">Login</a>';
               }
               else

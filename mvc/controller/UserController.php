@@ -11,6 +11,7 @@ class UserController
     public function index()
     {
         Security::checkLogin();
+        Security::checkAdmin();
         $userRepository = new UserRepository();
 
         $view = new View('user_index');

@@ -2,7 +2,6 @@
 
 <?php
 Security::checkLogin();
-Security::checkAdmin();
 $form = new Form('/review/doReview');
 
 echo $form->text()->label('Brand')->name('marke');
