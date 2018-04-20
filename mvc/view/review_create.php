@@ -4,15 +4,15 @@
 
 $form = new Form('/review/doReview');
 
-echo $form->text()->label('Marke')->name('marke');
-echo $form->text()->label('Modell')->name('modell');
-echo $form->text()->label('Ihre Rückmeldung (max. 1000)')->name('review');
+echo $form->text()->label('Brand')->name('marke');
+echo $form->text()->label('Model')->name('modell');
+echo $form->text()->label('Your review (max. 1000)')->name('review');
 
-echo "<p>Fügen Sie hier das Bild ihres Autos ein</p>";
-echo $form->image()->label('')->name('sendreview')->;
+echo "<p>Insert picture of your car</p>";
+echo $form->image()->label('')->name('sendreview');
 
 // echo $form->password()->label('Password')->name('password');
-echo $form->submit()->label('Review erstellen')->name('sendreview');
+echo $form->submit()->label('Submit review')->name('sendreview');
 
 $form->end();
 ?>

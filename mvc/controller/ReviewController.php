@@ -22,8 +22,8 @@ class ReviewController
     public function review()
     {
         $view = new View('review_create');
-        $view->title = 'Review erstellen';
-        $view->heading = 'Review erstellen';
+        $view->title = 'Create review';
+        $view->heading = 'Create review';
         $view->display();
     }
 

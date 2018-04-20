@@ -13,8 +13,8 @@ class UserController
         $userRepository = new UserRepository();
 
         $view = new View('user_index');
-        $view->title = 'Benutzer';
-        $view->heading = 'Benutzer';
+        $view->title = 'User';
+        $view->heading = 'User';
         $view->users = $userRepository->readAll();
         $view->display();
     }
@@ -22,8 +22,8 @@ class UserController
     public function create()
     {
         $view = new View('user_create');
-        $view->title = 'Benutzer erstellen';
-        $view->heading = 'Benutzer erstellen';
+        $view->title = 'Create user';
+        $view->heading = 'Create user';
         $view->display();
     }
 
@@ -33,10 +33,7 @@ class UserController
         if ($_POST['send']) {
             $username = $_POST['username'];
             $email = $_POST['email'];
-            $passwort = $_POST['password'];
-
-            // $password  = $_POST['password'];
-            // $password = 'no_password';
+            $password = $_POST['password'];
 
             $userRepository = new UserRepository();
             $userRepository->create($username, $email, $password);

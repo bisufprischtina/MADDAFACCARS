@@ -36,10 +36,10 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="/">Home</a></li>
-            <li><a href="/user">Benutzer</a></li>
+            <li><a href="/user">Users</a></li>
             <li><a href="/review">Reviews</a></li>
-            <li><a href="/user/create">Benutzer erstellen</a></li>
-            <li><a href="/review/review">Review erstellen</a></li>
+            <li><a href="/user/create">Create user</a></li>
+            <li><a href="/review/review">Create review</a></li>
             <li><a href="/user/login">Login</a>
           </ul>
         </div><!--/.nav-collapse -->
