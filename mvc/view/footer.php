@@ -1,6 +1,6 @@
         <hr>
         <footer>
-          <p style="text-align: center">&copy; Dominik Bieri & Joel Feller</p>
+          <p style="text-align: center">&copy; Dominik Bieri & Joel Feller Bild: Robin Mühlemann</p>
         </footer>
     </div>
 
