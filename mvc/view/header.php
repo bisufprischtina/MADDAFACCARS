@@ -40,8 +40,16 @@
             <li><a href="/review">Reviews</a></li>
             <li><a href="/user/create">Create user</a></li>
             <li><a href="/review/review">Create review</a></li>
-            <li><a href="/user/login">Login</a>
-            <li><a href="/user/doLogout">Logout</a>
+              <?php
+              if(isset($_SESSION['username']))
+              {
+                echo '<li><a href="/user/login">Login</a>';
+              }
+              else
+              {
+                echo '<li><a href="/user/doLogout">Logout</a>';
+              }
+              ?>
           </ul>
         </div><!--/.nav-collapse -->
 
